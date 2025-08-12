@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio of Aprianto</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+*, *::before, *::after {
+box-sizing: border-box;
+}
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
+background: #121212;
+color: #eee;
+line-height: 1.6;
+}
+a {
+color: ##00bfa6;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+a:hover {
+color: #00ffc8;
+}
+header {
+background: #111;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 10;
+box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+.container {
+max-width: 1100px;
+margin: auto;
+padding: 0 20px;
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 60px;
+}
+nav .logo {
+font-weight: 600;
+font-size: 1.8rem;
+color: #00bfa6;
+letter-spacing: 2px;
+}
+nav ul {
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+nav ul li {
+margin-left: 25px;
+}
+nav ul li a {
+font-weight: 600;
+text-transform: uppercase;
+font-size: 0.85rem;
+padding: 5px 0;
+border-bottom: 2px solid transparent;
+}
+nav ul li a:hover,
+nav ul li a.active {
+border-color: #00bfa6;
+}
+
+/* Hero Section */
+#hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+padding-top: 70px;
+background: linear-gradient(135deg, #00bfa6, #005f56);
+color: #111;
+text-align: center;
+flex-direction: column;
+justify-content: center;
+}
+#hero h1 {
+font-size: 3rem;
+margin-bottom: 10px;
+}
+#hero p {
+font-size: 1.3rem;
+max-width: 600px;
+}
+
+/* About Section */
+#about {
+background: #181818;
+padding: 60px 20px;
+}
+#about .container {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+#about img {
+border-radius: 100%;
+max-width: 200px;
+margin-right: 40px;
+box-shadow: 0 0 15px rgba(0,191,166,0.6);
+flex-shrink: 0;
+}
+#about .about-text {
+flex: 1;
+color: #ccc;
+}
+#about .about-text h2 {
+color: #00bfa6;
+margin-bottom: 15px;
+font-weight: 600;
+}
+
+/* Skills Section */
+#skills {
+padding: 60px 20px;
+background: #111;
+color: #ccc;
+}
+#skills h2 {
+text-align: center;
+color: #00bfa6;
+font-weight: 600;
+margin-bottom: 40px;
+font-size: 2rem;
+}
+.skill-list {
+max-width: 900px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+}
+.skill-item {
+background: #222;
+border-radius: 10px;
+padding: 20px 30px;
+min-width: 120px;
+text-align: center;
+font-weight: 600;
+font-size: 1rem;
+color: #00bfa6;
+box-shadow: 0 0 8px #00bfa6;
+transition: transform 0.3s ease;
+cursor: default;
+}
+.skill-item:hover {
+transform: scale(1.1);
+}
+
+/* Projects Section */
+#projects {
+padding: 60px 20px;
+background: #181818;
+}
+#projects h2 {
+text-align: center;
+color: #00bfa6;
+font-weight: 600;
+margin-bottom: 40px;
+font-size: 2rem;
+}
+.project-grid {
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+gap: 30px;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.project-card {
+background: #222;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 0 12px rgba(0,191,166,0.5);
+transition: transform 0.3s ease;
+}
+.project-card:hover {
+transform: translateY(-8px);
+}
+.project-image {
+width: 100%;
+height: 160px;
+object-fit: cover;
+}
+.project-content {
+padding: 15px 20px;
+color: #ccc;
+}
+.project-content h3 {
+margin-top: 0;
+color: #00bfa6;
+font-weight: 600;
+}
+.project-content p {
+font-size: 0.9rem;
+margin-bottom: 15px;
+}
+.project-content a {
+font-weight: 600;
+color: #00ffc8;
+}
+.project-content a:hover {
+text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+padding: 60px 20px;
+background: #111;
+color: #ccc;
+text-align: center;
+}
+#contact h2 {
+color: #00bfa6;
+font-weight: 600;
+margin-bottom: 40px;
+font-size: 2rem;
+}
+#contact p {
+font-size: 1.1rem;
+margin-bottom: 20px;
+}
+#contact a {
+color: #00bfa6;
+font-weight: 600;
+font-size: 1.1rem;
+margin: 0 15px;
+display: inline-block;
+vertical-align: middle;
+}
+#contact a:hover {
+color: #00ffc8;
+}
+
+/* Footer */
+footer {
+padding: 20px 0;
+text-align: center;
+background: #111;
+color: #555;
+font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+#about .container {
+flex-direction: column;
+text-align: center;
+}
+#about img {
+margin: 0 0 25px 0;
+}
+nav ul {
+display: none;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">
+Portfolio of Aprianto
+</div>
+<ul>
+<li><a href="#hero" class="active">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">colabewb</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section id="hero">
+<h1>Hello, I'm APRIANTO</h1>
+<p>
+saya adalah seorang programer pemula yang sedang berusaha untuk jadi lebih profesional
+</p>
+</section>
+
+<section id="about">
+<div class="container">
+<img src="pitor.jpg" width="190px" height="200px" alt="APRIANTO">
+<div class="about-text">
+<h2>About Me</h2>
+<p>
+Saya seorang pengembang web yang berdedikasi dengan pengalaman dalam membangun situs web dan aplikasi yang responsif serta ramah pengguna. Saya senang menciptakan desain yang indah dan menulis kode yang bersih serta efisien. Saat tidak sedang coding, saya menikmati kegiatan editing dan fotografi.
+</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skill-list">
+<div class="skill-item">
+HTML5
+</div>
+<div class="skill-item">
+CSS3
+</div>
+<div class="skill-item">
+JavaScript
+</div>
+<div class="skill-item">
+Php
+</div>
+<div class="skill-item">
+Python
+</div>
+<div class="skill-item">
+C++
+</div>
+<div class="skill-item">
+UI/UX Design
+</div>
+</div>
+</section>
+
+
+
+<section id="contact">
+<h2>Contact Me</h2>
+<p>
+Silakan hubungi saya melalui salah satu platform di bawah ini:
+</p>
+<p>
+<a href="apriantoskd152@gmail.com" target="_blank" rel="noopener noreferrer">email</a> |
+<a href="https://www.instagram.com/vanzyvn?igsh=a2tweXlhdnI2ajY=" target="_blank" rel="noopener noreferrer">sosial media</a> |
+<a href="https://discord.gg/y9KMM4PJ" target="_blank" rel="noopener noreferrer">discord</a>
+</p>
+</section>
+
+<footer>
+&copy; 2025 APRIANTO - All rights reserved.
+</footer>
+
+<script>
+// Smooth scrolling for nav links
+document.querySelectorAll('nav ul li a').forEach(link => {
+link.addEventListener('click', e => {
+e.preventDefault();
+document.querySelectorAll('nav ul li a').forEach(el => el.classList.remove('active'));
+link.classList.add('active');
+const target = document.querySelector(link.getAttribute('href'));
+if (target) {
+window.scrollTo({
+top: target.offsetTop - 60,
+behavior: 'smooth'
+});
+}
+});
+});
+</script>
+
+</body>
+</html>
